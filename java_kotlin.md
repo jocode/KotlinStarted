@@ -51,4 +51,30 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 ```
 
-## Elementos básicos en Android
+## Tipos e datos en Kotlin
+
+En Kotlin todo es un objeto, a diferencia de Java no tiene datos básicos o primitivos.
+
+- **Inferencia de tipo** Kotlin infiere qué tipo de da es dependiendo de la asignacion
+
+- **Tipos de datos**
+  - **`var x = 10`** Lo toma como un número
+  - **Entero** `var num: Int = 10`
+  - **Unit** `var num: Unit = 1` Funciona de manera similar a trabajar con void en Java (Pero es un objeto) -**Byte** `var num: Byte`
+  - **Short** `var num: Short = 7`
+  - **Char** `var num: Char = 'c'`
+  - **String** `var num: String = "Rajaleña"`
+
+Para definir una constante en Kotlin, se usa **val** en lugar de **var**
+
+- **var** Variable
+- **val** Constante (Inmutable)
+
+Los comentarios se hacen igual que en Java
+
+- De una línea `// Una sola línea`
+- Multilínea `/* Comentario de varias líneas */`
+
+Las condicionales en Kotlin funciona igual que en los otros lenguajes de programación
+
+El for se comporta como un **for each**
