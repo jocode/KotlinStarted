@@ -78,3 +78,14 @@ Los comentarios se hacen igual que en Java
 Las condicionales en Kotlin funciona igual que en los otros lenguajes de programación
 
 El for se comporta como un **for each**
+
+![Ejemplo código Kotlin](code-sample-large.svg)
+
+> Recordar importar el soporte para CardView y para RecyclerView en Android y siempre debe coincidir con la versión del AppCompact
+
+Para más información visitar [Cómo crear una lista con RecyclerView ](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+
+Cómo ahora con **AndroidX** las bibliotecas cambia al usar las dependencias, para ello debemos consultar en [Bibliotecas de JetPack](https://developer.android.com/jetpack/androidx/releases/cardview)
+
+- :see: Ver [Android Jetpack](https://developer.android.com/jetpack)
+- [Cómo iniciar otra actividad](https://developer.android.com/training/basics/firstapp/starting-activity?hl=es)

@@ -1,5 +1,6 @@
 package com.crexative.ejemplokotlin
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -39,6 +40,15 @@ class MainActivity : AppCompatActivity() {
             textView.text = contador.toString()
         }
 
+    }
+
+    fun openListView(view: View) {
+        val intent = Intent(this, ListViewExample::class.java)
+        startActivity(intent)
+    }
+    fun openRecyclerView(view: View) {
+        val intent = Intent(this, RecyclerExample::class.java)
+        startActivity(intent)
     }
 
 }
