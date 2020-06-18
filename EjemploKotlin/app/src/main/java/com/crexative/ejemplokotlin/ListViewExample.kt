@@ -3,11 +3,17 @@ package com.crexative.ejemplokotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
+import android.widget.TextView
 
 class ListViewExample : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.list_view_example)
+
+        val texto:TextView = findViewById(R.id.texto)
+
+        // Recibimos los valores del intent
+        var dato:String = intent.getStringExtra("dato")
 
         val listView : ListView = findViewById(R.id.list_view);
 
@@ -20,6 +26,7 @@ class ListViewExample : AppCompatActivity() {
 
         // Le añadimos el adaptador al ListView
         listView.adapter = MyAdapter(this, list)
+        texto.text = dato
 
     }
 }

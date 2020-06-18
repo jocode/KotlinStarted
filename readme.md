@@ -11,7 +11,6 @@ CARACTERISTICAS
 5. Es un lenguaje de programación Funcional
 6. Es fácil de aprender
 
-
 Kotlin trae nuevas características como la inmutabilidad. Cuando declaramos variables, puede ser que cambiemos los datos o no lo hagamos.
 
 Google decició tomar a Kotlin como lenguaje de primera mano para desarrollar apps en Android.
@@ -27,11 +26,9 @@ Debemos descargar los archivos de Kotlin desde la página oficial. [Kotlin Compi
 
 - `set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_144`
 
-
-- `set PATH=%PATH%C:\Program Files\Java\jdk1.8.0_144\bin`
+* `set PATH=%PATH%C:\Program Files\Java\jdk1.8.0_144\bin`
 
 O podemos descargar Java desde la página oficial [Descargar Java](https://www.java.com/es/download/)
-
 
 **Configurando Kotlin**
 
@@ -41,12 +38,12 @@ Ahora debemos configurar los binarios que hemos descargado de Kotlin. Para ello 
 - `set PATH=%PATH%;C:\Program Files\kotlin-native-windows-1.3.61\bin`
 
 Con el siguiente comando comprobamos si ya esta funcionando kotlin
+
 - `kotlinc-jvm`
 - `2+2`
 - `:quit`
 
-
-Creamos un archivo nuevo y donde coloquemos un hola mundo. Para ello creamos un archivo *`hello.kt`*
+Creamos un archivo nuevo y donde coloquemos un hola mundo. Para ello creamos un archivo _`hello.kt`_
 
 ```kotlin
 fun main(args:Array<String>){
@@ -62,14 +59,11 @@ Para ejecutarlo, usamos java
 
 - `java -jar hello.jar`
 
-
 ## Instalando y probando IntelliJ IDEA
 
 IntelliJ IDEA es un IDE, un entorno de programación equipado para trabajar con Kotlin.
 
 Para descargar IntelliJ IDEA debemos ir a [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-
-
 
 ## Variables y tipos en Kotlin
 
@@ -79,27 +73,26 @@ En este modulo vamos a aprender la sintaxis básica de Kotlin, declaración de v
 
 - Usando la palabra reservada **`var`** las variables son **mutables**, es decir que puedes _modificar su valor_ a lo largo del programa.
 
-
 ```kotlin
-fun main(args: Array<String>) {
-  
-  val a = 5 // Inmutable (NO se puede cambiar)
-  var b = 4 // Mutable
+  fun main(args: Array<String>) {
 
-  val nombre:String = "Juan Perez"
+    val a = 5 // Inmutable (NO se puede cambiar)
+    var b = 4 // Mutable
+
+    val nombre:String = "Juan Perez"
 
 
-  val num:Int = 0
-  val lgn:Long = 23L
-  val lng2 = 22L
-  val flt = 4f
-  val flt2:Float 4f
-  val doub:Double = 23.9
+    val num:Int = 0
+    val lgn:Long = 23L
+    val lng2 = 22L
+    val flt = 4f
+    val flt2:Float = 4f
+    val doub:Double = 23.9
 
-  val isCool = false
-  val isTerco:Boolean = false
+    val isCool = false
+    val isTerco:Boolean = false
 
-}
+  }
 ```
 
 Los Strings en Kotlin tiene muchas ventajas sobre otros lenguajes.
@@ -111,13 +104,11 @@ En Kotlin para concatenar cadenas de texto usamos templates, estos templates nos
 
 En los Strings también podemos hacer operaciones usando brackets `{ }` después del símbolo `$`
 
-
-
 ## Kotlin para Android
 
 Android Studio por defecto coloca Kotlin para que vayamos migrando a este nuevo lenguaje.
 
-Kotlin es mas sencillo para programar aplicaciones en Android. 
+Kotlin es más sencillo para programar aplicaciones en Android.
 
 - Los import son las API para poder reutilizar funcionalidades
 
@@ -162,3 +153,55 @@ En caso de que aparezca error como _You've successfully authenticated, but GitHu
 
 - `git remote set-url origin git@github.com:jocode/KotlinStarted.git`
 
+## Intents en Kotlin Android
+
+Un Intent es una intención, se usa para cambiar entre actividades o para abrir otras aplicaciones del sistema.
+
+```kotlin
+  var intent = Intent(this, SecondActivity::class.java)
+  startActivity(intent)
+```
+
+- [Cómo iniciar otra actividad](https://developer.android.com/training/basics/firstapp/starting-activity?hl=es)
+
+**Pasar valores entre actividades**
+
+Siguiendo con las instrucciones anteriores, podemos pasar actividades usando
+
+```kotlin
+  val intent = Intent(this, ListViewExample::class.java)
+  intent.putExtra("dato", editText.text.toString())
+  startActivity(intent)
+```
+
+En la otra actividad el valor se recibe usando
+
+```kotlin
+  // Recibimos los valores del intent
+  var dato:String = intent.getStringExtra("dato")
+```
+
+## Manejo de errores en Kotlin
+
+```kotlin
+var x :String = "Hola mundo"
+var z:Int = try {
+  Integer.parseInt(x)
+} catch (e:NumberFormatException){
+  Log.e("TAG", "Erroe en parseo")
+}
+```
+
+## POJO en Kotlin. Getters and Setters
+
+Con Kotlin reducimos notablemente la cantidad de código que usamos en los POJOS
+
+Con la palabra **data** kotlin reconoce que se trata de un clase que usará getters and setters
+
+```kotlin
+data class Usuario(var nombre:String, var edad:Int, var nacionalidad:String, var Correro:String, var ciudad:String)
+```
+
+## Sobreescribir los métodos del ciclo de vida
+
+Para sobreescribir los métodos podemos, se usa la palabra reservada (deorador) **@override**

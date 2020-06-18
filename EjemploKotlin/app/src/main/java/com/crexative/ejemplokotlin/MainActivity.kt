@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
+import kotlinx.android.synthetic.main.activity_main.* // Importa las variables locales de otros métodos
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,11 +42,41 @@ class MainActivity : AppCompatActivity() {
 
     fun openListView(view: View) {
         val intent = Intent(this, ListViewExample::class.java)
+        try {
+            intent.putExtra("dato", editText.text.toString())
+        }  catch (e:NumberFormatException){
+            Log.e("TAG", "Error de parseo")
+        }
         startActivity(intent)
     }
     fun openRecyclerView(view: View) {
         val intent = Intent(this, RecyclerExample::class.java)
         startActivity(intent)
+        Toast.makeText(this, "Pasamos a Recycler", Toast.LENGTH_SHORT).show()
     }
 
+    override fun onStart() {
+        super.onStart()
+        Log.e("TAG", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("TAG", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("TAG", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("TAG", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("TAG", "onDestroy")
+    }
 }

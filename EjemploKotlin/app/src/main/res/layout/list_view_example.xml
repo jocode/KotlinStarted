@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".ListViewExample">
 
+    <TextView
+        android:id="@+id/texto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Texto de Actividad"
+        android:layout_marginBottom="@dimen/margin"/>
+
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
