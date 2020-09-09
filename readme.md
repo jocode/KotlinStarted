@@ -205,3 +205,5 @@ data class Usuario(var nombre:String, var edad:Int, var nacionalidad:String, var
 ## Sobreescribir los métodos del ciclo de vida
 
 Para sobreescribir los métodos podemos, se usa la palabra reservada (deorador) **@override**
+
+**Android X is the namespace for Android JetPack**
